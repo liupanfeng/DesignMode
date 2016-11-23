@@ -1,4 +1,4 @@
-package com.mycheering.designmode.design.design.iterator;
+package com.mycheering.designmode.design.design.iterator.demo1;
 
 /**
  * Created by lpf on 2016/11/23.
