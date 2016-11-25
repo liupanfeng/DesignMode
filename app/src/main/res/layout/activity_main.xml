@@ -15,4 +15,9 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="发送广播" />
+
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
