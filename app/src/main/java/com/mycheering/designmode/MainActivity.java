@@ -17,7 +17,7 @@ import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnSend;
+    private Button btnSend,btn_zhimafen;
     private ImageView ivPic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +44,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         btnSend=(Button)findViewById(R.id.btn_send);
+        btn_zhimafen=(Button)findViewById(R.id.btn_zhimafen);
         btnSend.setOnClickListener(this);
+        btn_zhimafen.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         Intent intent=new Intent();
-        intent.setAction("com.lpf.action.ORDER_BROADCAST");
-        intent.putExtra("limit",100);
-        intent.putExtra("msg","message from MainActivity!");
-        sendOrderedBroadcast(intent,null);
+        switch (v.getId()){
+            case R.id.btn_send:
+                intent.setAction("com.lpf.action.ORDER_BROADCAST");
+                intent.putExtra("limit",100);
+                intent.putExtra("msg","message from MainActivity!");
+                sendOrderedBroadcast(intent,null);
+                break;
+            case R.id.btn_zhimafen:
+                intent=new Intent(MainActivity.this,ZhiMaFenActivity.class);
+                startActivity(intent);
+                break;
+        }
+
     }
 }
