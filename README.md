@@ -1,0 +1,2 @@
+# DesignMode
+make in lpf
